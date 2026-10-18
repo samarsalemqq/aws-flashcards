@@ -1,0 +1,12 @@
+# Dependencies and build output
+node_modules/
+.aws-sam/
+
+# Never commit credentials or local environment files
+.env
+.env.*
+*.pem
+.aws/
+
+# OS files
+.DS_Store
