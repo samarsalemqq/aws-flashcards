@@ -32,7 +32,7 @@ flowchart LR
 | Step | What I built | AWS services | Notes |
 |---|---|---|---|
 | 1 | First Lambda function that returns a random card, with its own least-privilege execution role | Lambda, IAM, CloudWatch Logs | [01-lambda-and-iam.md](docs/01-lambda-and-iam.md) |
-| 2 | Versions, an alias and a canary release | Lambda | _next_ |
+| 2 | Versions, an alias and a canary release | Lambda | [02-versions-and-aliases.md](docs/02-versions-and-aliases.md) |
 | 3 | HTTP endpoint with a Cognito authorizer | API Gateway, Cognito | _planned_ |
 | 4 | Store cards and track the ones I get wrong | DynamoDB | _planned_ |
 | 5 | Daily review reminder | EventBridge | _planned_ |
