@@ -10,9 +10,12 @@ Each step adds one AWS service I've just studied, so the project grows with the 
 
 ```mermaid
 flowchart LR
-    T[Console test event] --> L[Lambda: getRandomCard]
-    L --> CW[CloudWatch Logs]
-    R[IAM execution role<br/>least privilege] -.assumed by.-> L
+    T[Console test / CloudShell] --> A[Alias: prod]
+    A -- 90% --> V1[Version 1]
+    A -- 10% --> V2[Version 2]
+    V1 --> CW[CloudWatch Logs]
+    V2 --> CW
+    R[IAM execution role<br/>least privilege] -.assumed by.-> A
 ```
 
 **Where it's going**
@@ -33,7 +36,7 @@ flowchart LR
 |---|---|---|---|
 | 1 | First Lambda function that returns a random card, with its own least-privilege execution role | Lambda, IAM, CloudWatch Logs | [01-lambda-and-iam.md](docs/01-lambda-and-iam.md) |
 | 2 | Versions, an alias and a canary release | Lambda | [02-versions-and-aliases.md](docs/02-versions-and-aliases.md) |
-| 3 | HTTP endpoint with a Cognito authorizer | API Gateway, Cognito | _planned_ |
+| 3 | HTTP endpoint with a Cognito authorizer | API Gateway, Cognito | _next_ |
 | 4 | Store cards and track the ones I get wrong | DynamoDB | _planned_ |
 | 5 | Daily review reminder | EventBridge | _planned_ |
 | 6 | Infrastructure as code, deployed with one command | AWS SAM, CloudFormation | _planned_ |
