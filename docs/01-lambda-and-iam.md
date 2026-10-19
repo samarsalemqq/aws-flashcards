@@ -12,7 +12,6 @@
 4. **A test event** (`simple-test`, shareable) and a first successful run.
 
 ![Trust relationship of the execution role](screenshots/01-trust-policy.png)
-![First successful test](screenshots/01-test-result.png)
 
 ## What the test output told me
 
